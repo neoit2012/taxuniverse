@@ -1,0 +1,9 @@
+# Database Schema Document
+
+## 1. Global Standards
+- Use `ulid` or `uuid` for primary keys in sensitive tables.
+- All tables must have `created_at`, `updated_at`, and `deleted_at` (SoftDeletes).
+
+## 2. Current Entities
+- **Users:** Authentication and profile metadata.
+- **AuditLogs:** Tracking administrative changes (User ID, IP, Action, Timestamp).

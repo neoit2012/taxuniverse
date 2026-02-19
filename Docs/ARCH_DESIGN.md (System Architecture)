@@ -1,0 +1,16 @@
+# Architectural Design Document (ADD)
+**Project:** Enterprise Laravel Portal
+**Status:** Scaffolding Phase
+**Standard:** SOLID / Clean Architecture
+
+## 1. Directory Structure Standards
+- **Services:** `app/Services/` - Logic for business operations.
+- **Repositories:** `app/Repositories/` - Data access and Eloquent abstraction.
+- **DTOs:** `app/DTOs/` - Data Transfer Objects for strict typing.
+
+## 2. Request Flow
+Client -> Middleware (Security) -> Controller -> Service -> Repository -> Model -> Database.
+
+## 3. Design Principles
+- **Strict Types:** Every file must use `declare(strict_types=1);`.
+- **Dependency Injection:** Services injected into Controllers; Repositories injected into Services.

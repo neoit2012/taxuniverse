@@ -1,0 +1,14 @@
+# Feature: [Name]
+**ID:** F-XXX
+
+## Technical Overview
+- **Service:** `App\Services\ExampleService`
+- **Repository:** `App\Repositories\ExampleRepository`
+
+## Security Audit
+- [ ] Validated via FormRequest?
+- [ ] Policy/Gate applied?
+- [ ] Sanity check for mass assignment?
+
+## QA
+- **Pest Test File:** `tests/Feature/ExampleTest.php`

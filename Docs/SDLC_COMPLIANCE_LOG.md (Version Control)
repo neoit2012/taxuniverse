@@ -1,0 +1,11 @@
+# SDLC Compliance & Feature Tracker
+
+| ID | Feature | Pattern | Security Audit | Test Coverage | Date |
+|:---|:---|:---|:---|:---|:---|
+| F-000 | System Scaffold | TALL Stack | ✅ | 100% | 2026-02-19 |
+
+## Definition of Done (DoD)
+1. Code follows PSR-12.
+2. Pest tests pass.
+3. Feature documentation generated.
+4. Security middleware verified.

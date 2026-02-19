@@ -1,0 +1,11 @@
+# Deployment Runbook: Hostinger Production
+
+## 1. Preparation
+- Run `composer install --optimize-autoloader --no-dev`.
+- Run `php artisan optimize`.
+- Compile assets: `npm run build`.
+
+## 2. Hostinger Specifics
+- Symlink `public` to `public_html`.
+- Ensure `.htaccess` blocks access to `.env` and `storage/logs`.
+- Database credentials must be updated via hPanel Environment Variables.
