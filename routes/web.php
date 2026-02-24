@@ -31,6 +31,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/orders/{order}/documents', [DocumentController::class, 'store'])->name('documents.store');
     Route::get('/documents/{document}', [DocumentController::class, 'download'])->name('documents.download');
 
+    Route::get('/services/{service:slug}/apply', function(\App\Models\Service $service) {
+        return view('services.apply', compact('service'));
+    })->name('services.apply');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

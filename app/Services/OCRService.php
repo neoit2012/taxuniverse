@@ -10,7 +10,11 @@ class OCRService
 {
     public function extract($imagePath)
     {
-        $pythonPath = base_path('ocr_venv/Scripts/python');
+        $isWindows = strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
+        $pythonPath = $isWindows 
+            ? base_path('ocr_venv/Scripts/python') 
+            : base_path('ocr_venv/bin/python');
+            
         $scriptPath = base_path('ocr_extract.py');
 
         $process = new Process([$pythonPath, $scriptPath, $imagePath]);
