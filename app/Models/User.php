@@ -10,7 +10,10 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-class User extends Authenticatable implements MustVerifyEmail, HasMedia
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
+
+class User extends Authenticatable implements MustVerifyEmail, HasMedia, FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable, InteractsWithMedia;
 
@@ -57,5 +60,10 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
     public function documents()
     {
         return $this->hasMany(Document::class);
+    }
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return $this->role === 'admin';
     }
 }
